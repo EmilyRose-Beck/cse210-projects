@@ -6,7 +6,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        ScriptureList list = new ScriptureList();
+       /* ScriptureList list = new ScriptureList();
         Reference randomScripture = list.GetRandomScripture();
 
         Console.WriteLine("Your random scripture is:");
@@ -15,5 +15,9 @@ class Program
 
         Console.WriteLine("\nPress Enter to exit...");
         Console.ReadLine();
+        */
+        MangeScripture manager = new MangeScripture();
+        manager.Run();
+
     }
 }
