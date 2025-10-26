@@ -10,7 +10,7 @@ class HidesWords
     //makes a list of word that are hidden
 
     private string _word;
-    private bool _revaeled;
+    private bool _revealed;
 
 
     /*
@@ -32,15 +32,24 @@ class HidesWords
     //hides the pickes word
     //displays current verse
 
-    public HidesWords(string ____)
+    public HidesWords(string word)
     {
-        _word = ____;
-        _revaeled = true;
+        _word = word;
+        _revealed = true;
     }
 
+        public void Hide()
+    {
+        _revealed = false;
+    }
+
+    public bool IsRevealed()
+    {
+        return _revealed;
+    }
     public void Display()
     {
-        if (_revaeled)
+        if (_revealed)
         {
             Console.Write(" " + _word);
         }
@@ -58,13 +67,4 @@ class HidesWords
 
     }
 
-    public void Hide()
-    {
-        _revaeled = false;
-    }
-
-    public bool IsRevealed()
-    {
-        return _revaeled;
-    }
 }
