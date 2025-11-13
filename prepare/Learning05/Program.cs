@@ -1,37 +1,25 @@
 using System;
 using System.Collections.Generic;
-using System.Security.Principal;
 
 class Program
 {
     static void Main(string[] args)
     {
-
         List<Shape> shapes = new List<Shape>();
 
-        Console.WriteLine("Shape Area Calculator");
-        Console.Write("Please start entering shapes.");
+        Console.WriteLine("Welcome to the Shape Area Calculator!");
 
-        int count = int.Parse(Console.ReadLine());
+        bool addMore = true;
 
-        /*
-        Square s1 = new Square("Red", 3);
-        shapes.Add(s1);
-
-        Rectangle s2 = new Rectangle("Blue", 4, 5);
-        shapes.Add(s2);
-
-        Circle s3 = new Circle("Green", 6);
-        shapes.Add(s3);
-        */
-        for (int i = 0; i < count; i++)
+        //next put lines 15-56 into a class or functon
+        while (addMore)
         {
-            Console.WriteLine($"\nShape #{i + 1}");
+            Console.WriteLine("\nAdd a new shape!");
             Console.Write("Enter the shape type (square, rectangle, or circle): ");
-            string type = Console.ReadLine().ToLower();
+            string type = Console.ReadLine().Trim().ToLower();
 
             Console.Write("Enter the color: ");
-            string color = Console.ReadLine();
+            string color = Console.ReadLine().Trim();
 
             if (type == "square")
             {
@@ -57,19 +45,22 @@ class Program
             {
                 Console.WriteLine("Invalid shape type! Skipping...");
             }
+
+            Console.Write("\nWould you like to add another shape? (yes/no): ");
+            string response = Console.ReadLine().Trim().ToLower();
+
+            if (response != "yes" && response != "y")
+            {
+                addMore = false;
+            }
         }
 
         Console.WriteLine("\n--- Shape Results ---");
         foreach (Shape s in shapes)
         {
-           /*
-            string color = s.GetColor();
-
-            double area = s.GetArea();
-
-            Console.WriteLine($"The {color} shape has an area of {area}.");
-        */
-         Console.WriteLine($"The {s.GetColor()} {s.GetType().Name} has an area of {s.GetArea():0.00}.");
+            Console.WriteLine($"The {s.GetColor()} {s.GetType().Name} has an area of {s.GetArea():0.00}.");
         }
+
+        Console.WriteLine("\nThanks for using the Shape Area Calculator!");
     }
 }
