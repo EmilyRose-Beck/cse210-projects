@@ -1,27 +1,33 @@
 //parent class for the other goal classes
-class Goal
+
+using System;
+//turning this into  an abstract class makes this work better
+public abstract class Goal
 {
-    protected int _pointWorth;
-
-    //_option : string<List>
-
-    //points : int
-    public Goal(int pointWorth)
+    protected string _title;
+    protected string _desc;
+    protected int _points;
+    protected bool _isComplete;
+    public bool IsComplete()
     {
-        _pointWorth = pointWorth;
-
+        return _isComplete;
     }
-    //checkbox : string  I want to use the rewrite for this one, come back later
+    protected DateTime _dateCreated = DateTime.Now;
 
+    //creates a new goal
+    public abstract void CreateGoal();
+    //prints list
+    public abstract string GetDisplayText();
+    //updates score
+    public abstract int RecordEvent();
 
-    //description : string
+    public abstract void LoadData(string[] parts);
 
-    //isComplete: bool
+    public virtual string SaveFormat()
 
-    //DisplayPoints()
+    {
+        return $"{_title}|{_desc}|{_points}|{_isComplete}";
+    }
+    
 
-    //Save()
-
-    //IsComplete()
 }
-
