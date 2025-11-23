@@ -105,13 +105,13 @@ public class Loading
             g.LoadData(parts);
             return g;
         }
-        if (goalType == "Enternal Goal" && parts.Length == 5) 
+        if (goalType == "Enternal Goal" && parts.Length == 4) 
         {
             EnternalGoal g = new EnternalGoal();
             g.LoadData(parts);
             return g;
         }
-        if (goalType == "Checklist Goal" && parts.Length == 5)
+        if (goalType == "Checklist Goal" && parts.Length == 8)
         {
             ChecklistGoal g = new ChecklistGoal();
             g.LoadData(parts);
