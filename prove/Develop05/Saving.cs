@@ -32,24 +32,21 @@ public class Saving
         Console.WriteLine($"Saved to {fileName}!");
     }
     //deletes old saves (file)
-    public void DeleteSave(string fileName)
+    public bool DeleteSave(string fileName)
     {
-        //checks if its a valid filename
         if (!_validFiles.Contains(fileName))
         {
-            Console.WriteLine("\nInvalid file name!");
-            return;
+            return false; // invalid name
         }
 
         if (File.Exists(fileName))
         {
             File.Delete(fileName);
-            Console.WriteLine($"Deleted {fileName}.");
+            return true; // successfully deleted
         }
-        else //checks if the file does exist to delete
-        {
-            Console.WriteLine($"No save file found.");
-        }
+
+        return false; // file not found
     }
+
     
 }

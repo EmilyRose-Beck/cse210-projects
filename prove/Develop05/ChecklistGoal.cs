@@ -10,7 +10,8 @@ public class ChecklistGoal : Goal
     public override string GetDisplayText()
     {
         string status = _isComplete ? "[X]" : "[ ]";
-        return $"{status} {_title} ({_desc}) -- {_amountCompleted}/{_targetAmount} completions";
+        return $"{status} {_title} ({_desc}) --- {_amountCompleted}/{_targetAmount} completions";
+
     }
 
     public override int RecordEvent()
@@ -30,7 +31,7 @@ public class ChecklistGoal : Goal
 
     public override string SaveFormat()
     {
-        return $"Checklist|{_title}|{_desc}|{_points}|{_amountCompleted}|{_targetAmount}|{_bonus}|{_isComplete}";
+        return $"Checklist Goal|{_title}|{_desc}|{_points}|{_amountCompleted}|{_targetAmount}|{_bonus}|{_isComplete}";
     }
 
     public override void LoadData(string[] parts)
