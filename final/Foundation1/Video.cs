@@ -22,25 +22,42 @@ class Video
     private List<Comment> _comments = new List<Comment> ();
     
 
-    //+ Video (title, author, seconds)
     //+ GetNumberOfComments()
-    private int _numberOfComments;
+    //private int _numberOfComments;
+    //using count now not needed or at least it shouldn't be needed
 
-    public void Display(string title, string author, float secondsTimed, int numberOfComments)
+//+ Video (title, author, seconds)
+    public Video(string title, string author, float secondsTimed)
     {
         _title = title;
         _author = author;
         _secondsTimed = secondsTimed;
-        _numberOfComments = numberOfComments;
-        Console.WriteLine("testing~~~");
-
-        foreach (string Comment in _comments)
-        {
-            _numberOfComments = _numberOfComments + 1;
-    
-        }
-        Console.WriteLine($"{_numberOfComments}");
     }
     //+ AddComment()
+    public void AddComment(Comment comment)
+    {
+        _comments.Add(comment);
+    }
+
+      //+ GetNumberOfComments()
+    public int GetNumberOfComments()
+    {
+        return _comments.Count;
+    }
+
     //+ DisplayVideo()
+    public void DisplayVideo()
+    {   Console.WriteLine($"Title: {_title}");
+        Console.WriteLine($"Author: {_author}");
+        Console.WriteLine($"Video Length: {_secondsTimed} seconds");
+        Console.WriteLine($"Comments: {GetNumberOfComments()}");
+
+
+        foreach (Comment comment in _comments)
+        {
+            comment.DisplayComment();
+        }
+        
+        Console.WriteLine();
+    }
 }

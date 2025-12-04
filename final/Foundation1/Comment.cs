@@ -9,10 +9,30 @@ using System;
 class Comment
 {
     // - _commentText: string()
-    // - _commentName: string()
-    
+    private string _commentText;
+    // - _commentersName: string()
+    private string _commentersName;
 
     // + Comment ()
+    public Comment(string commentersName, string commentText)
+    {
+        _commentersName = commentersName;
+        _commentText = commentText;
+    }
     // + GetCommenterName()
+    public string GetCommenterName()
+    {
+        return _commentersName;
+    }
+
+    // + GetCommentText()
+    public string GetCommentText()
+    {
+        return _commentText;
+    }
     // + DisplayComments()
+    public void DisplayComment()
+    {
+        Console.WriteLine($"{_commentersName}: {_commentText}");
+    }
 }

@@ -40,12 +40,29 @@ class Program
 {
     static void Main(string[] args)
     {
-        Video video1 = new Video();
-        video1._title = "tester 1";
 
+        List<Video> videos = new List<Video>();
+        
+        //I am the making these right? I don't think any of the projects that use user input
+        Video video1 = new Video("PalWorld Part 1", "SilverRose43",1800);
 
-        Comment comment = new Comment();
+        video1.AddComment(new Comment("John", "Cute voice, have you concidered voice acting?"));
+        video1.AddComment(new Comment("NotMarkiplier", "I haven't seen you before on YouTube."));
 
+        Video video2 = new Video("Turnip Boy Part 2", "SilverRose43", 1901);
+
+        video2.AddComment(new Comment("MickyMouseFan", "Turnip Boy noooo!"));
+        video2.AddComment(new Comment("FNAFlover","Why is a turnip commiting tax evasion?"));
+        video2.AddComment(new Comment("Seraph","The art in this game is sooo cute!!!"));
+
+        //I forgot to add them
+        videos.Add(video1);
+        videos.Add(video2);
+
+        foreach(Video video in videos)
+        {
+            video.DisplayVideo();
+        }
 
     }
 }
