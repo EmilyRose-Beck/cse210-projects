@@ -40,6 +40,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation1 World!");
+        Video video1 = new Video();
+        video1._title = "tester 1";
+
+
+        Comment comment = new Comment();
+
+
     }
 }
