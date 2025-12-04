@@ -55,6 +55,13 @@ class Program
         video2.AddComment(new Comment("FNAFlover","Why is a turnip commiting tax evasion?"));
         video2.AddComment(new Comment("Seraph","The art in this game is sooo cute!!!"));
 
+        Video video3 = new Video("Islet Part 3", "SilverRose43", 1982);
+
+        video3.AddComment(new Comment("@warden-sisyphus5554", "Lol, walking into the spikes. Wonder if you can break those pots/vases"));
+        video3.AddComment(new Comment("Anonymous-v9d4w", "Keep on posting your videos and you will make it big"));
+        video3.AddComment(new Comment("Kwigs", "Fun video!  Hope you're enjoying the game!"));
+        video3.AddComment(new Comment("AnonymousAnonymous","I'm Anonymous."));
+
         //I forgot to add them
         videos.Add(video1);
         videos.Add(video2);
