@@ -63,8 +63,10 @@ class Program
         video3.AddComment(new Comment("AnonymousAnonymous","I'm Anonymous."));
 
         //I forgot to add them
+        //number of times forgotten? twice
         videos.Add(video1);
         videos.Add(video2);
+        videos.Add(video3);
 
         foreach(Video video in videos)
         {
