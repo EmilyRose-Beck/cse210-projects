@@ -42,7 +42,7 @@ class Order
     }
 
     // + shippingLabel()
-    public string shippingCost()
+    public string ShippingLabel()
     {
         return $"{_customer.GetCustomerName()}\n{_customer.GetShippingAddress()}";
     }
@@ -57,6 +57,8 @@ class Order
         }
         return label;
     }
+
+
 
 
 }
