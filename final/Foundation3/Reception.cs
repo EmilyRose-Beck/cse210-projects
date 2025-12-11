@@ -13,18 +13,18 @@ public class Reception : Event
     }
 
 // + GetStandardDetails()
-    public string GetStandardDetails()
+    public new string GetStandardDetails()
     {
         return base.GetStandardDetails();
     }
 // + GetFullDetails()
-    public string GetFullDetails()
+    public new string GetFullDetails()
     {
         return base.GetFullDetails() + 
             $"\nRSVP Required: {_isRsvpe}";
     }
 // + GetShortDetails()
-    public string GetShortDetails()
+    public new string GetShortDetails()
     {
         return $"Reception: {GrabEventTitle()} on {GrabDate()}";
     }

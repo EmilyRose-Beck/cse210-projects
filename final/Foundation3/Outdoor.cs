@@ -5,46 +5,32 @@ public class Outdoor : Event
 {
     
 // - _weather: string
-    private string _weather;
-    private List<string> _weatherOptions = new List<string>
-    {
-        "Sunny",
-        "Cloudy",
-        "Windy",
-        "Light Rain",
-        "Heavy Rain",
-        "Snow",
-        "Hot and Dry",
-        "Cool Breeze",
-        "Thunderstorms"
-    };
+    private string _weather; //required
+    private string _weatherPrediction; //prediction
 
-    private string _randomWeather;
-
-    public Outdoor(string eventTitle, string description, string date, string time, Address address, string eventType, string speficDetails, string weather)
+    public Outdoor(string eventTitle, string description, string date, string time, Address address, string eventType, string speficDetails, string weather, string weatherPrediction)
         : base(eventTitle, description, date, time, address, eventType, speficDetails)
     {
         _weather = weather;
+        _weatherPrediction = weatherPrediction;
 
-        Random random = new Random();
-        _randomWeather = _weatherOptions[random.Next(_weatherOptions.Count)];
     }
 
 // + GetStandardDetails()
-    public string GetStandardDetails()
+    public new string GetStandardDetails()
     {
         return base.GetStandardDetails();
     }
 // + GetFullDetails()
-    public string GetFullDetails()
+    public new string GetFullDetails()
     {
         return base.GetFullDetails() + 
-            $"\nWeather: {_weather}" +
-            $"\nCurrent Weather Prodition: {_randomWeather}";
+            $"\nWeather Requirment: {_weather}" +
+            $"\nWeather Prediction: {_weatherPrediction}";
 
     }
 // + GetShortDetails()
-    public string GetShortDetails()
+    public new string GetShortDetails()
     {
         return $"Outdoor Event: {GrabEventTitle()} on {GrabDate()}";
     }
