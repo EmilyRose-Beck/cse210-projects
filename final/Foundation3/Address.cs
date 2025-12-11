@@ -1,12 +1,46 @@
 using System;
 
-public class Address
+//reused Address from prevous Address class in F. 2
+class Address
 {
-    // - _streetAddress: string
-    // - _city: string
-    // - _state: string
-    // - _country: string
+    //-_streetAddress string()
+    private string _streetAddress;
 
-    // + GetAddress()
+    //-_city: string()
+    private string _city;
+
+    // - _stateProvince: string()
+    private string _stateProvince;
+    
+
+    // +Address(street, city, state, country)
+    public Address(string streetAddress, string city, string stateProvince )
+    {
+        _streetAddress = streetAddress;
+        _city = city;
+        _stateProvince = stateProvince;
+    }
+
+    public string GetStreetAddress()
+    {
+        return _streetAddress;
+    }
+
+    public string GetCity()
+    {
+        return _city;
+    }
+
+    public string GetStateProvince()
+    {
+        return _stateProvince;
+    }
+
+
+    // + GetFullAddress
+    public string GetFullAddress()
+    {
+        return $"{_streetAddress}\n{_city}, {_stateProvince}";
+    }
 
 }
