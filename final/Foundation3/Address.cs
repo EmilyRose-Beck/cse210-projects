@@ -1,7 +1,7 @@
 using System;
 
 //reused Address from prevous Address class in F. 2
-class Address
+public class Address
 {
     //-_streetAddress string()
     private string _streetAddress;

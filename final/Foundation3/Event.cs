@@ -19,19 +19,19 @@ public class Event
 /*
 information specific to that event type. For lectures, this includes the speaker name and capacity. For receptions this includes an email for RSVP. For outdoor gatherings, this includes a statement of the weather.
 */
-    private string _speficDetails;
+private string _specificDetails;
 
-    public Event(string eventTitle, string description, string date, string time, Address address, string eventType, string speficDetails)
-    {
-        _eventTitle = eventTitle;
-        _description = description;
-        _date = date;
-        _time = time;
-        _address = address;
-        _eventType = eventType;
-        _speficDetails = speficDetails;
+public Event(string eventTitle, string description, string date, string time, Address address, string eventType, string specificDetails)
+{
+    _eventTitle = eventTitle;
+    _description = description;
+    _date = date;
+    _time = time;
+    _address = address;
+    _eventType = eventType;
+    _specificDetails = specificDetails;
+}
 
-    }
 
     //gets just incase
     public string GrabEventTitle()
@@ -61,14 +61,20 @@ information specific to that event type. For lectures, this includes the speaker
 
     public string GetStandardDetails()
     {
-        return _eventTitle + _description + _date + _time + _address;
+        return $"Title: {_eventTitle}\n" +
+        $"Description: {_description}\n" + 
+        $"Date: {_date}\n" +
+        $"Time: {_time}\n" +
+        $"Address: \n{_address.GetFullAddress()}";
     }
 
    /* Full details - Lists all of the above, plus type of event and information specific to that event type. For lectures, this includes the speaker name and capacity. For receptions this includes an email for RSVP. For outdoor gatherings, this includes a statement of the weather.*/
     // + GetFullDetails()
     public string GetFullDetails()
     {
-        return _eventTitle + _description + _date + _time + _address + _eventType + _speficDetails;
+        return GetStandardDetails() + 
+        $"\nEvent Type: {_eventType}\n" +
+        $"Details: {_specificDetails}";
     }    
 
     
@@ -76,6 +82,6 @@ information specific to that event type. For lectures, this includes the speaker
     // + GetShortDetails()
     public string GetShortDetails()
     {
-        return _eventType + _eventTitle + _date;
+        return $"{_eventType}: {_eventTitle} on {_date}";
     }
 }

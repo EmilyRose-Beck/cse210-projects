@@ -17,12 +17,26 @@ public class Lecture : Event
 /*Standard details - Lists the title, description, date, time, and address.*/
 
     // + GetStandardDetails()
+    public string GetStandardDetails()
+    {
+        return base.GetStandardDetails();
+    }
 
    /* Full details - Lists all of the above, plus type of event and information specific to that event type. For lectures, this includes the speaker name and capacity. For receptions this includes an email for RSVP. For outdoor gatherings, this includes a statement of the weather.*/
 
     // + GetFullDetails()
+    public string GetFullDetails()
+    {
+        return base.GetFullDetails() +
+            $"\nSpeaker: {_speaker}\n" +
+            $"Max Capacity: {_maxCap}";
+    }
 
     /*Short description - Lists the type of event, title, and the date.*/
 
     // + GetShortDetails()
+    public string GetShortDetails()
+    {
+        return $"Lecture: {GrabEventTitle()} on {GrabDate()}";
+    }
 }

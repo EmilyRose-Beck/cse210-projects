@@ -1,6 +1,6 @@
 using System;
 
-class Reception : Event
+public class Reception : Event
 {
 
 // -_isRsvpe: bool
@@ -13,6 +13,19 @@ class Reception : Event
     }
 
 // + GetStandardDetails()
+    public string GetStandardDetails()
+    {
+        return base.GetStandardDetails();
+    }
 // + GetFullDetails()
+    public string GetFullDetails()
+    {
+        return base.GetFullDetails() + 
+            $"\nRSVP Required: {_isRsvpe}";
+    }
 // + GetShortDetails()
+    public string GetShortDetails()
+    {
+        return $"Reception: {GrabEventTitle()} on {GrabDate()}";
+    }
 }
